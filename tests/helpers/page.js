@@ -46,7 +46,6 @@ class CustomPage {
     }
     async goto(url){
         await this.page.goto(url);
-        //await this.page.waitForNavigation({ waitUntil: 'networkidle2' });
     }
     
     get(path){
