@@ -1,0 +1,31 @@
+to start:  npm run dev
+
+Caching Solution
+Redis server for cache
+Redis module to connect app to Redis server
+
+Installing Redis on Windows is surprisingly easy!
+
+Here's how to do it:
+
+Go to the releases page of the Redis for Windows repo: https://github.com/MicrosoftArchive/redis/releases
+Download the 'Redis-x64-xxx.zip' file.  You can use any version.  Make sure you do not download the 'source code' zip.
+Unzip the file
+In the newly created folder, run redis-server.exe 
+You should see a window appear that says redis is running on port 6379.  
+Thats it!  Onwards we go!
+
+client.flushall() -> clean redis data
+
+client.hset('1', 'red', 'EX',5); -> addind experation time to 5s -> doesnt work in Windows
+
+puppeteer -> headless browser 
+jest -> test runner
+
+keygrip -> to sign sessionid and verify sessionids
+cookie-sessions -> for cookie managment
+
+test.only -> will only run that test
+
+travis for CI
+http://docs.travis-ci.com

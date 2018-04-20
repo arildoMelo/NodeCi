@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "8"
+dist: trusty
+services:
+  - mongodb
+  - redis-server
+env:
+  # Adding in two records causes two separate builds to be created, 
+  #where one build has the NODE_ENV set, and the other has PORT set.  
+  #- NODE_ENV=ci
+  #- PORT=3000
+  #instead we will add them in the same line
+  - NODE_ENV=ci PORT=3000
+
+cache:
+  directories:
+    - node_modules
+    - client/node_modules
+install:
+  - npm install
+  - npm run build
+script:
+  - nohup npm run start &
+  - sleep 3
+  - nom run test
